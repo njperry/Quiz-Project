@@ -1,0 +1,73 @@
+<!-- <form #nameForm="ngForm" (ngSubmit)="addNewName(nameForm)">
+  <label for="">What's Your Name</label>
+  <input type="text" ngModel name="username">
+  <label for="">What's Your Score</label>
+  <input type="text" ngModel name="scores">
+  <button>Enter</button>
+</form> -->
+
+<!-- <label for="">Enter Name</label>
+<input type="text">
+<button>Enter</button> -->
+
+<!-- <form [formGroup]="radioGroupForm" (ngSubmit)="answers(questionForm)" *ngFor="let question of questionList; index as i"></form> -->
+<!-- <form #questionForm="ngForm" (ngSubmit)="answers(questionForm)" *ngFor="let question of questionList; index as i">
+  <p>{{ question.question_name }}</p>
+  <input type="radio" name="choice">{{ question.choice_1 }}
+  <input type="radio" name="choice"> {{ question.choice_2 }}
+  <input type="radio" name="choice"> {{ question.choice_3 }}
+  <input type="radio" name="choice">{{ question.choice_4 }}
+  <button>SUBMIT ANSWER</button>
+</form> -->
+
+<!-- <form #questionForm="ngForm" (ngSubmit)="answers(questionForm, i)" *ngFor="let question of questionList; index as i"> -->
+    <!-- <form #questionForm="ngForm" (ngSubmit)="getAnswer(stuff)" *ngFor="let question of questionList; index as i"> -->
+        
+      
+      <!-- <form #qForm="ngForm" (ngSubmit)="submitAnswers(qForm)" *ngFor="let question of questionList; index as i">
+  <p>{{ question.question_name }}</p>
+  <div class="custom-control custom-radio">
+    <input (click)="check(question.choice_1, question.answer, i)" type="checkbox" class="custom-control-input" id="defaultUnchecked" ngModel name="choice1" >
+    <label class="custom-control-label" for="defaultUnchecked">{{ question.choice_1 }}</label>
+  </div>
+  <div class="custom-control custom-radio">
+    <input (click)="check(question.choice_2, question.answer, i)" type="checkbox" class="custom-control-input" id="defaultUnchecked" ngModel name="choice2" >
+    <label class="custom-control-label" for="defaultUnchecked">{{ question.choice_2 }}</label>
+  </div>
+  <div class="custom-control custom-radio">
+    <input (click)="check(question.choice_3, question.answer, i)" type="checkbox" class="custom-control-input" id="defaultUnchecked" ngModel name="choice3" >
+    <label class="custom-control-label" for="defaultUnchecked">{{ question.choice_3 }}</label>
+  </div>
+  <div class="custom-control custom-radio">
+    <input (click)="check(question.choice_4, question.answer, i)" type="checkbox" class="custom-control-input" id="defaultUnchecked" ngModel name="choice4" >
+    <label class="custom-control-label" for="defaultUnchecked">{{ question.choice_4 }}</label>
+  </div>
+  <p>{{ question.answer }}</p>
+  
+</form>
+
+<button (click)=submitQuiz()>SUBMIT ANSWER</button> -->
+
+<form class="form-group" #questionForm="ngForm" (ngSubmit)="submitAnswers(questionForm)">
+    <label for="">Enter Username:</label>
+    <input class="form-control" type="text" ngModel name="username">
+ 
+ <div class="container" *ngFor="let question of questions; index as i">
+ 
+      <p>{{ question.question_name }}</p>
+ 
+      <input class="form-control" class="custom-control-input" type="radio" ngModel name="q{{i+1}}" value="{{ question.choice_1 }}">
+      <label class="custom-control-label" for="">{{ question.choice_1 }}</label>
+ 
+      <input class="form-control" class="custom-control-input" type="radio" ngModel name="q{{i+1}}" value="{{ question.choice_2 }}">
+      <label class="custom-control-label" for="">{{ question.choice_2 }}</label>
+ 
+      <input class="form-control" class="custom-control-input" type="radio" ngModel name="q{{i+1}}" value="{{ question.choice_3 }}">
+      <label class="custom-control-label" for="">{{ question.choice_3 }}</label>
+ 
+      <input class="form-control" class="custom-control-input" type="radio" ngModel name="q{{i+1}}" value="{{ question.choice_4 }}">
+      <label class="custom-control-label" for="">{{ question.choice_4 }}</label>
+      <!-- <p>{{ question.answer }}</p> -->
+ </div>
+    <button class="btn btn-success">Submit</button>
+ </form>
